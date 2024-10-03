@@ -1,19 +1,39 @@
 function bluecontrol () {
     if (uartData == "A") {
-        SuperBit.MotorRun(SuperBit.enMotors.M1, 255)
-        SuperBit.MotorRun(SuperBit.enMotors.M3, 255)
+        SuperBit.MotorRunDual(
+        SuperBit.enMotors.M1,
+        255,
+        SuperBit.enMotors.M3,
+        255
+        )
     } else if (uartData == "B") {
-        SuperBit.MotorRun(SuperBit.enMotors.M1, -255)
-        SuperBit.MotorRun(SuperBit.enMotors.M3, -255)
+        SuperBit.MotorRunDual(
+        SuperBit.enMotors.M1,
+        -255,
+        SuperBit.enMotors.M3,
+        -255
+        )
     } else if (uartData == "C") {
-        SuperBit.MotorRun(SuperBit.enMotors.M1, -255)
-        SuperBit.MotorRun(SuperBit.enMotors.M3, 255)
+        SuperBit.MotorRunDual(
+        SuperBit.enMotors.M1,
+        -255,
+        SuperBit.enMotors.M3,
+        255
+        )
     } else if (uartData == "D") {
-        SuperBit.MotorRun(SuperBit.enMotors.M1, 255)
-        SuperBit.MotorRun(SuperBit.enMotors.M3, -255)
+        SuperBit.MotorRunDual(
+        SuperBit.enMotors.M1,
+        255,
+        SuperBit.enMotors.M3,
+        -255
+        )
     } else if (uartData == "0") {
-        SuperBit.MotorRun(SuperBit.enMotors.M1, 0)
-        SuperBit.MotorRun(SuperBit.enMotors.M3, 0)
+        SuperBit.MotorRunDual(
+        SuperBit.enMotors.M1,
+        0,
+        SuperBit.enMotors.M3,
+        0
+        )
     }
 }
 function BreathLED () {
