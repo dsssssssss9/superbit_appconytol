@@ -53,18 +53,6 @@ bluetooth.onBluetoothDisconnected(function () {
     basic.showIcon(IconNames.Sad)
     connected = 0
 })
-bluetooth.onBluetoothConnected(function () {
-    basic.showIcon(IconNames.Happy)
-    connected = 1
-    while (connected == 1) {
-        uartData = bluetooth.uartReadUntil(serial.delimiters(Delimiters.Hash))
-        bluecontrol()
-        SevenColorLED()
-        music2()
-        ModeSelect()
-        SevenWaterLED()
-    }
-})
 function ModeSelect () {
     if (uartData == "S") {
         basic.showIcon(IconNames.House)
@@ -112,6 +100,18 @@ function HorseLED () {
     SuperBit.RGB_Program().clear()
     SuperBit.RGB_Program().show()
 }
+bluetooth.onBluetoothConnected(function () {
+    basic.showIcon(IconNames.Happy)
+    connected = 1
+    while (connected == 1) {
+        uartData = bluetooth.uartReadUntil(serial.delimiters(Delimiters.Hash))
+        bluecontrol()
+        SevenColorLED()
+        music2()
+        ModeSelect()
+        SevenWaterLED()
+    }
+})
 function WaterLED () {
     SuperBit.RGB_Program().setBrightness(255)
     SuperBit.RGB_Program().setPixelColor(0, neopixel.colors(NeoPixelColors.Violet))
