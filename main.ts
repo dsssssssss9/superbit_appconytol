@@ -194,10 +194,8 @@ let m = 0
 let i = 0
 g_RGBMode = 0
 connected = 0
-SuperBit.Servo2(SuperBit.enServo.S1, 105)
 bluetooth.startUartService()
 basic.showString("S")
-music.setBuiltInSpeakerEnabled(false)
 basic.forever(function () {
     if (g_RGBMode == 1) {
         SuperBit.RGB_Program().clear()
